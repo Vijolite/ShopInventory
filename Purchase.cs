@@ -19,11 +19,19 @@ namespace ShopInventory
             if (countCanBuy>0)
             {
                 Item item = new Item (st.Item.Name);
-                Buy buy = new Buy (item,countCanBuy);
+                Buy buy = new Buy (item,countCanBuy,st);
                 PurchaseList.Add(buy);
             }
             else
                 Console.WriteLine("The amount of {0} is already 0, you cannot buy it ",st.Item.Name);
+        }
+
+        public void CancelPurchase()
+        {
+            foreach (Buy buy in PurchaseList) {
+                buy.Stock.AddAmount(buy.Amount);
+            };
+            PurchaseList.Clear();
         }
 
         public void PrintPurchaseInfo () 

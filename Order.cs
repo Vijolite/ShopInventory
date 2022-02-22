@@ -16,9 +16,19 @@ namespace ShopInventory
         public void AddToOrder(Stock st, int count) 
         {
             Item item = new Item (st.Item.Name);
-            Buy buy = new Buy (item,count);
+            Buy buy = new Buy (item,count,st);
             st.AddAmount(count);
             OrderList.Add(buy);
+        }
+
+        public void AddToOrder(String name, int count, Warehouse warehouse) 
+        {
+            Item item = new Item (name);
+            Stock st = new Stock (item);
+            Buy buy = new Buy (item,count,st);
+            st.AddAmount(count);
+            OrderList.Add(buy);
+            warehouse.AddStock(st);
         }
 
         public void PrintOrderInfo () 

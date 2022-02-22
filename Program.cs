@@ -31,12 +31,16 @@
             jacob_p1.AddToBasket(greeting_st,2);
             jacob_p1.PrintPurchaseInfo(); 
             w.PrintStockList();
+            jacob_p1.CancelPurchase();
+            jacob_p1.PrintPurchaseInfo(); 
+            w.PrintStockList();
 
             Manager anna = new Manager("Anna");
             Order anna_o1 = new Order(anna);
             anna_o1.AddToOrder(book1_st,10);
             anna_o1.AddToOrder(greeting_st,10);
             anna_o1.AddToOrder(apple_st,10);
+            anna_o1.AddToOrder("candle",25,w);
             anna_o1.PrintOrderInfo(); 
             w.PrintStockList();
         }
