@@ -4,15 +4,14 @@
     {
         static void Main(String[] args)
         {
-            Console.WriteLine("'Program'");
             Item book1 = new Item("book - Harry Potter");
             Item apple = new Item("Apple");
             Item greeting = new Item("Greeting Card");
-            //book1.PrintName();
+
             Stock book1_st = new Stock (book1,5);
             Stock apple_st = new Stock (apple,15);
             Stock greeting_st = new Stock (greeting,150);
-            //book1_st.PrintInfo();
+            
             Warehouse w = new Warehouse();
             w.AddStock(book1_st);
             w.AddStock(apple_st);
