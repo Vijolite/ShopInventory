@@ -11,7 +11,7 @@
             Stock book1_st = new Stock (book1,5);
             Stock apple_st = new Stock (apple,15);
             Stock greeting_st = new Stock (greeting,150);
-            
+
             Warehouse w = new Warehouse();
             w.AddStock(book1_st);
             w.AddStock(apple_st);

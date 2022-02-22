@@ -16,9 +16,14 @@ namespace ShopInventory
         public void AddToBasket(Stock st, int count) 
         {
             int countCanBuy=st.SubtractAmount(count);
-            Item item = new Item (st.Item.Name);
-            Buy buy = new Buy (item,countCanBuy);
-            PurchaseList.Add(buy);
+            if (countCanBuy>0)
+            {
+                Item item = new Item (st.Item.Name);
+                Buy buy = new Buy (item,countCanBuy);
+                PurchaseList.Add(buy);
+            }
+            else
+                Console.WriteLine("The amount of {0} is already 0, you cannot buy it ",st.Item.Name);
         }
 
         public void PrintPurchaseInfo () 
